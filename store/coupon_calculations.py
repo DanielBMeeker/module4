@@ -3,13 +3,14 @@ TAX = .06
 
 
 def calculate_price(price, cash_coupon, percent_coupon):
-    if 0 < price < 10:
+    price_after_discounts = (price - cash_coupon)*(1-percent_coupon)
+    # Even if discount is greater than the price of the item customer still has to pay shipping
+    # so reset price to 0 so that a discount is not applied to shipping.
+    if price_after_discounts < 0:
+        price_after_discounts = 0
+    elif 0 <= price_after_discounts < 10:
         shipping = 5.95
-        # Even if discount is greater than the price of the item customer still has to pay shipping.
-        if (price - cash_coupon)*(1-percent_coupon) < 0:
-            subtotal = shipping
-        else:
-            subtotal = (price - cash_coupon)*(1-percent_coupon)+shipping
+    subtotal = price_after_discounts+shipping
     total = subtotal*(1+.06)
     return total
 
