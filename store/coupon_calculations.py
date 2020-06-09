@@ -8,8 +8,10 @@ def calculate_price(price, cash_coupon, percent_coupon):
     # so reset price to 0 so that a discount is not applied to shipping.
     if price_after_discounts < 0:
         price_after_discounts = 0
-    elif 0 <= price_after_discounts < 10:
+    if 0 <= price_after_discounts < 10:
         shipping = 5.95
+    elif 10 <= price_after_discounts < 30:
+        shipping = 7.95
     subtotal = price_after_discounts+shipping
     total = subtotal*(1+.06)
     return total

@@ -20,6 +20,7 @@ class MyTestCase(unittest.TestCase):
         self.assertAlmostEqual(cc.calculate_price(PRICE_UNDER_TEN, CASH_COUPON_TEN, PERCENT_COUPON_TEN), 6.31, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_UNDER_TEN, CASH_COUPON_TEN, PERCENT_COUPON_FIFTEEN), 6.31, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_UNDER_TEN, CASH_COUPON_TEN, PERCENT_COUPON_TWENTY), 6.31, places=2)
+        
     def test_price_ten_to_thirty(self):
         self.assertAlmostEqual(cc.calculate_price(PRICE_BETWEEN_TEN_THIRTY, CASH_COUPON_FIVE, PERCENT_COUPON_TEN), 27.50, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_BETWEEN_TEN_THIRTY, CASH_COUPON_FIVE, PERCENT_COUPON_FIFTEEN), 26.44, places=2)
