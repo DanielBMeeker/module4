@@ -5,6 +5,7 @@ from store import coupon_calculations as cc
 PRICE_UNDER_TEN = 6.99
 PRICE_BETWEEN_TEN_THIRTY = 24.99
 PRICE_BETWEEN_THIRTY_FIFTY = 39.99
+PRICE_OVER_FIFTY = 74.99
 CASH_COUPON_FIVE = 5
 CASH_COUPON_TEN = 10
 PERCENT_COUPON_TEN = .1
@@ -37,6 +38,14 @@ class MyTestCase(unittest.TestCase):
         self.assertAlmostEqual(cc.calculate_price(PRICE_BETWEEN_THIRTY_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_TEN), 37.04, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_BETWEEN_THIRTY_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_FIFTEEN), 35.45, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_BETWEEN_THIRTY_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_TWENTY), 33.86, places=2)
+
+    def test_price_over_fifty(self):
+        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_FIVE, PERCENT_COUPON_TEN), 66.77, places=2)
+        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_FIVE, PERCENT_COUPON_FIFTEEN), 63.03, places=2)
+        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_FIVE, PERCENT_COUPON_TWENTY), 59.35, places=2)
+        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_TEN), 62.00, places=2)
+        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_FIFTEEN), 58.56, places=2)
+        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_TWENTY), 55.11, places=2)
 
 
 if __name__ == '__main__':
