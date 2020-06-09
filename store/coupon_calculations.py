@@ -12,6 +12,8 @@ def calculate_price(price, cash_coupon, percent_coupon):
         shipping = 5.95
     elif 10 <= price_after_discounts < 30:
         shipping = 7.95
+    elif 30 <= price_after_discounts < 50:
+        shipping = 11.95
     subtotal = price_after_discounts+shipping
     total = subtotal*(1+.06)
     return total
