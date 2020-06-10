@@ -1,3 +1,13 @@
+"""
+Program: test_validation_with_try.py
+Author: Daniel Meeker
+Date: 06/10/2020
+
+This program modifies an earlier assignment to add some input
+validation, raising errors in the function then using a try
+block in the main to catch the errors. This file runs the unit
+tests for the program.
+"""
 import unittest
 from unittest import mock
 from input_validation import validation_with_try as avg
