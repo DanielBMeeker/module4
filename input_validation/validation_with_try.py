@@ -15,6 +15,9 @@ def average_try(score1, score2, score3):
         elif score2 < 0:
             print("score2 can't be negative")
             raise ValueError
+        elif score3 < 0:
+            print("score3 can't be negative")
+            raise ValueError
         else:
             average_test_scores = (float(score1)+float(score2)+float(score3))/3
         return average_test_scores
