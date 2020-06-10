@@ -1,3 +1,11 @@
+"""
+Program: Test Coupon Calculations
+Author: Daniel Meeker
+Date: 06/09/2020
+
+This program uses if-elif statements to calculate order totals
+with discounts, shipping, and tax. This file tests the program.
+"""
 import unittest
 from store import coupon_calculations as cc
 
@@ -41,7 +49,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_price_over_fifty(self):
         self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_FIVE, PERCENT_COUPON_TEN), 66.77, places=2)
-        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_FIVE, PERCENT_COUPON_FIFTEEN), 63.03, places=2)
+        self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_FIVE, PERCENT_COUPON_FIFTEEN), 63.06, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_FIVE, PERCENT_COUPON_TWENTY), 59.35, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_TEN), 62.00, places=2)
         self.assertAlmostEqual(cc.calculate_price(PRICE_OVER_FIFTY, CASH_COUPON_TEN, PERCENT_COUPON_FIFTEEN), 58.56, places=2)
