@@ -7,6 +7,18 @@ def average():
     return (float(score1)+float(score2)+float(score3))/3
 
 
+def average_try(score1, score2, score3):
+    try:
+        if score1 < 0:
+            raise ValueError
+        else:
+            average_test_scores = (float(score1)+float(score2)+float(score3))/3
+        return average_test_scores
+    except:
+        print('Invalid input')
+        raise ValueError
+
+
 if __name__ == '__main__':
 
     # Get user information
